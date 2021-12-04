@@ -17,11 +17,12 @@ function App() {
   const [coctailActive, setCoctailActive] = useState(false);
 
   const handleChange = (e) => {
-    setInput(e.target.value);
-    if (input){
-    let text = input.trim();
+    let newValue = e.target.value;
+    setInput(newValue)
+    
+    if (newValue){
     const fetchCoctails = async() =>{
-      const url = apiRoot + searchPath + text;
+      const url = apiRoot + searchPath + newValue;
       const response = await fetch(url);
       const coctailsObj = await response.json();
       const coctails = coctailsObj.drinks;
@@ -55,6 +56,8 @@ function App() {
       const response = await fetch(url);
       const randomObj = await response.json();
       const randomCoctail = randomObj.drinks[0];
+      console.log(randomCoctail);
+      setCoctailActive(true);
       setCoctail(randomCoctail);
     }
     fetchRandom();
@@ -65,7 +68,7 @@ function App() {
       <Search changeInput={handleChange} input={input} getRandomCoctail={getRandomCoctail}/>
       {coctails && <Coctails coctails={coctails} getDetails={getDetails} coctailsActive={coctailsActive}/>}
        {coctail && <Coctail coctail={coctail} coctailActive={coctailActive}/>}
-       {coctailsActive===false && <CoctailIdeas arrow={arrow}/>}
+       {(coctailsActive===false && coctailActive===false) && <CoctailIdeas arrow={arrow}/>}
     </div>
   );
 }

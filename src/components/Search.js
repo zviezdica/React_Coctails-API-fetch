@@ -8,8 +8,8 @@ const Search = ({changeInput, input, getRandomCoctail}) =>{
             type='text' 
             name='coctail' 
             id='coctail' 
-            value={input}
             onChange={changeInput}
+            value={input}
             />
             <span>or</span>
             <button type='button' className='random-btn' onClick={getRandomCoctail}>Get me 

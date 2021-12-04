@@ -48,20 +48,21 @@ span {
 }
 
 .random-btn {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 200px;
   font-size: 1.2rem;
-  border-radius: 50%;
+  border-radius: 5%;
   border: none;
-  background: radial-gradient(rgb(29, 29, 29), rgba(0, 0, 0, 1));
+  background-color: rgb(15, 15, 15);
   font-weight: 700;
-  color: rgb(233, 53, 68);
+  color: bisque;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .random-btn:hover {
-  transform: scale(1.02);
-  background: radial-gradient(rgba(0, 0, 0, 1), rgb(12, 12, 12));
+  background-color: black;
+  color: royalblue;
 }
 
 .coctails-section {
@@ -89,7 +90,7 @@ li {
 
 li:hover {
   font-size: 1.3rem;
-  color: rgb(233, 53, 68);
+  color: royalblue;
 }
 
 .coctail-container {
@@ -121,7 +122,7 @@ li:hover {
 
 .info-h1 {
   margin-bottom: 1rem;
-  color: rgb(233, 53, 68);
+  color: royalblue;
 }
 .coctail-img {
   width: 300px;
@@ -138,7 +139,7 @@ li:hover {
 .h1-ideas {
   font-size: 5rem;
   width: 40vw;
-  color: bisque;
+  color: royalblue;
   font-family: "Lobster", cursive;
   position: absolute;
   bottom: 25%;
