@@ -12,7 +12,7 @@ const Search = ({changeInput, input, getRandomCoctail}) =>{
             value={input}
             />
             <span>or</span>
-            <button type='button' className='random-btn' onClick={getRandomCoctail}>Get me 
+            <button type='button' className='btn random-btn' onClick={getRandomCoctail}>Get me 
             random!</button>
         </section>
     )

@@ -6,7 +6,7 @@ const Coctails = ({coctails, getDetails, coctailsActive}) =>{
             <ul>
                 {coctails.map((coctail)=>{
                     const {idDrink, strDrink} = coctail;
-                    return <li key={idDrink} onClick={()=>getDetails(idDrink)}> {strDrink} </li>
+                    return <li className='li' key={idDrink} onClick={()=>getDetails(idDrink)}> {strDrink} </li>
                 })}
             </ul>
         </section>

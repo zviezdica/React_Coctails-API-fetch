@@ -8,109 +8,186 @@ body {
   background: url("./slike/coctail1.jpg") left top/cover no-repeat fixed;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background-color: whitesmoke; */
+  /* background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.774),
+    rgba(245, 245, 245, 0.1)
+  ); */
+  display: flex;
+}
+.nav-section {
+  flex-grow: 1;
+}
+.logo {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  color: bisque;
+  font-style: italic;
+}
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  padding: 0.8rem;
+  transition: all 0.2s;
+}
+.nav-item:hover {
+  background-color: black;
+  color: royalblue;
+}
+
+/*HOME SECTION*/
+.home-section {
+  margin: auto;
+  margin-top: 6rem;
+  width: 60vw;
+  text-align: center;
+  /* background-color: rgba(15, 15, 15, 0.3); */
+
+  color: whitesmoke;
+  min-height: 80vh;
+}
+.h1-home {
+  font-weight: 300;
+  font-size: 7vh;
+  font-style: italic;
+  color: whitesmoke;
+  padding: 5vh;
+}
+.span-liquor {
+  font-family: "Lobster", cursive;
+  font-size: 11vh;
+  color: bisque;
+  padding: 5vh;
+}
+.about {
+  font-size: 1.2rem;
+  padding: 0.8rem;
+}
+.h2-home {
+  padding: 0.4rem;
+  padding-top: 1rem;
+}
+.home-ul {
+  padding: 0;
+}
+.btn-container {
+  margin: auto;
+  padding: 2rem;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  width: 200px;
+  height: 40px;
+  text-transform: capitalize;
+  color: rgb(15, 15, 15);
+  border: rgb(15, 15, 15) solid 1px;
+  background: whitesmoke;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background-color: rgb(15, 15, 15);
+  color: royalblue;
+}
+
 .search-section {
   position: absolute;
-  top: 5vh;
-  left: 5vh;
-  width: 30vw;
-  height: 40vh;
-  padding: 1rem;
+  top: 8vh;
+
+  width: 80vw;
+  height: 10vh;
+  padding: 0.5rem;
   display: flex;
-  flex-direction: column;
+
   align-items: center;
-  justify-content: space-around;
-  backdrop-filter: blur(3px);
-  background: linear-gradient(
+  justify-content: flex-start;
+  /* backdrop-filter: blur(3px); */
+  /* background: linear-gradient(
     to right bottom,
     rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 0.4)
-  );
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(88, 88, 88, 0.609);
+  ); */
+
+  /* box-shadow: 0px 0px 10px rgba(88, 88, 88, 0.609); */
   color: whitesmoke;
 }
 
 label {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 input {
   font-size: 1.2rem;
   border: none;
-  border-radius: 4px;
-  width: 50%;
-}
-
-span {
-  color: bisque;
-  font-size: 1.5rem;
-  font-weight: 700;
+  width: 20vw;
+  margin: auto 0.5rem;
 }
 
 .random-btn {
-  height: 50px;
-  width: 200px;
-  font-size: 1.2rem;
-  border-radius: 5%;
-  border: none;
-  background-color: rgb(15, 15, 15);
-  font-weight: 700;
-  color: bisque;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.random-btn:hover {
-  background-color: black;
-  color: royalblue;
+  font-size: 1rem;
+  margin: auto 0.5rem;
 }
 
 .coctails-section {
   position: absolute;
-  top: 50vh;
-  left: 5vh;
-  width: 30vw;
+  top: 20vh;
+
+  width: 20vw;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.95),
-    rgba(0, 0, 0, 0.5)
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.8)
   );
-  backdrop-filter: blur(1px);
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(88, 88, 88, 0.609);
-  color: bisque;
-}
+  /* backdrop-filter: blur(1px);
 
+  box-shadow: 0px 0px 10px rgba(88, 88, 88, 0.609); */
+  color: rgb(15, 15, 15);
+}
 li {
   list-style-type: none;
+}
+.li {
   font-size: 1.2rem;
   padding: 0.2rem;
-  cursor: pointer;
+  transition: all 0.2s;
 }
 
-li:hover {
-  font-size: 1.3rem;
+.li:hover {
+  background-color: black;
   color: royalblue;
 }
 
 .coctail-container {
-  position: fixed;
-  bottom: 5vh;
-  right: 5vh;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
   width: 40vw;
   min-height: 80vh;
   padding: 1rem;
   text-align: center;
   background: linear-gradient(
-    to right bottom,
-    rgba(36, 36, 36, 0.856),
-    rgba(102, 102, 102, 0.2)
+    to right,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.6)
   );
-  backdrop-filter: blur(3px);
-  border: rgba(138, 138, 138, 0.15) solid 2px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(88, 88, 88, 0.609);
-  color: bisque;
+  /* backdrop-filter: blur(3px); */
+  /* border: rgba(138, 138, 138, 0.15) solid 2px;
+  
+  box-shadow: 0px 0px 10px rgba(88, 88, 88, 0.609); */
+  color: black;
 }
 
 .invisible {
@@ -122,18 +199,13 @@ li:hover {
 
 .info-h1 {
   margin-bottom: 1rem;
-  color: royalblue;
+  color: black;
 }
 .coctail-img {
   width: 300px;
   height: 300px;
   margin: 20px 0px;
-  border-radius: 10px;
-}
-
-.info-h2,
-.description {
-  color: whitesmoke;
+  border-radius: 5px;
 }
 
 .h1-ideas {
@@ -151,4 +223,8 @@ li:hover {
   position: absolute;
   bottom: 35%;
   left: 15%;
+}
+
+.red {
+  color: red;
 }

@@ -2,3 +2,8 @@ export {default as Search} from './Search';
 export {default as Coctails} from './Coctails';
 export {default as Coctail} from './Coctail';
 export {default as CoctailIdeas} from './CoctailIdeas';
+export {default as NavBar} from './NavBar';
+export {default as Home} from './Home';
+export {default as Store} from './Store';
+export {default as Ideas} from './Ideas';
+export {default as Contact} from './Contact';

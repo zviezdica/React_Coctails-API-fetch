@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Coctails, Coctail, CoctailIdeas } from './components';
+import { NavBar, Home, Store, Ideas, Contact, Search, Coctails, Coctail, CoctailIdeas } from './components';
 import './App.css';
 import arrow from '../src/slike/arrow.png'
 
@@ -10,6 +10,13 @@ const detailsPath = "lookup.php?i=";
 const randomCoctailPath = "random.php"
 
 function App() {
+  
+  const [navItemsActivity, setNavItemsActivity] = useState([
+    {id:0, isactive:true},
+    {id:1, isactive:false},
+    {id:2, isactive:false},
+    {id:3, isactive:false}
+  ])
   const [input, setInput] = useState('');
   const [coctails, setCoctails] = useState([]);
   const [coctail, setCoctail] = useState('');
@@ -43,6 +50,7 @@ function App() {
       const response = await fetch(url);
       const detailsObj = await response.json();
       const coctail = detailsObj.drinks[0];
+      console.log(coctail)
       setCoctail(coctail);
       setCoctailActive(true);
 
@@ -63,12 +71,35 @@ function App() {
     fetchRandom();
   }
 
+  const navSelect = (e) =>{
+    let id = e.target.id;
+    let newNavItemsActivity = [...navItemsActivity];
+    newNavItemsActivity.map((newNavItemActivity)=>{
+      newNavItemActivity.isactive=false;
+      if (newNavItemActivity.id == id){
+        newNavItemActivity.isactive=true;
+      }
+    })
+    console.log(newNavItemsActivity)
+    console.log(navItemsActivity[1].isactive)
+    setNavItemsActivity(newNavItemsActivity);
+    
+    }
+    
+  
+
   return (
     <div className="App">
-      <Search changeInput={handleChange} input={input} getRandomCoctail={getRandomCoctail}/>
-      {coctails && <Coctails coctails={coctails} getDetails={getDetails} coctailsActive={coctailsActive}/>}
-       {coctail && <Coctail coctail={coctail} coctailActive={coctailActive}/>}
-       {(coctailsActive===false && coctailActive===false) && <CoctailIdeas arrow={arrow}/>}
+      <NavBar navSelect={navSelect}/>
+      
+      {navItemsActivity[2].isactive && <Search changeInput={handleChange} input={input} getRandomCoctail={getRandomCoctail}/>}
+      {coctails && navItemsActivity[2].isactive && <Coctails coctails={coctails} getDetails={getDetails} coctailsActive={coctailsActive}/>}
+       {coctail && navItemsActivity[2].isactive &&<Coctail coctail={coctail} coctailActive={coctailActive}/>}
+       {/* {(coctailsActive===false && coctailActive===false && navItemsActivity[2].isactive) && <CoctailIdeas arrow={arrow}/>} */}
+       { navItemsActivity[0].isactive && <Home />}
+       {navItemsActivity[1].isactive && <Store />}
+       {/* {navItemsActivity[2].isactive && <Ideas />} */}
+       {navItemsActivity[3].isactive && <Contact />}
     </div>
   );
 }
