@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = ({goToShop, goToContact}) =>{
     return(
-        <div className='home-section'>
+        <section className='home-section'>
             <h1 className='h1-home'>Welcome to<span className='span-liquor'>Liquor store!</span></h1>
             <p className='about'>
                 The knowledgeable staff at our liquor store will be able to guide you through our 
@@ -28,7 +28,7 @@ const Home = ({goToShop, goToContact}) =>{
             </div>
             
 
-        </div>
+        </section>
     )
 }
 

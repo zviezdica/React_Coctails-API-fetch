@@ -252,3 +252,35 @@ li {
 .shop-product-btn {
   margin-top: 2vh;
 }
+
+/*CONTACT SECTION*/
+.contact-section {
+  width: 100%;
+  margin-top: 10vh;
+  min-height: 90vh;
+  background-color: whitesmoke;
+  text-align: center;
+}
+.contact-title {
+  padding: 2rem;
+}
+.form {
+  width: 500px;
+  margin-inline: auto;
+  text-align: left;
+  padding: 1rem;
+}
+.submit-btn {
+  margin-top: 1rem;
+}
+.submit-btn:hover {
+  color: whitesmoke;
+}
+form input {
+  width: 450px;
+  margin-bottom: 1rem;
+}
+textarea {
+  width: 460px;
+  height: 200px;
+}
