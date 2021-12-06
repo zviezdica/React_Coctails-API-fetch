@@ -228,3 +228,27 @@ li {
 .red {
   color: red;
 }
+
+/*STORE SECTION*/
+.store-section {
+  background-color: whitesmoke;
+  margin-top: 10vh;
+}
+.products-container {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.store-item {
+  margin: 3vh;
+}
+.product-img {
+  width: 250px;
+}
+.price {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.shop-product-btn {
+  margin-top: 2vh;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = () =>{
+const Home = ({goToShop, goToContact}) =>{
     return(
         <div className='home-section'>
             <h1 className='h1-home'>Welcome to<span className='span-liquor'>Liquor store!</span></h1>
@@ -23,8 +23,8 @@ const Home = () =>{
                 <li><b>Sunday: </b>closed</li>
             </ul>
             <div className='btn-container'>
-                <button className='btn'>Shop now</button>
-                <button className='btn'>contact us</button>
+                <button className='btn' onClick={goToShop}>Shop now</button>
+                <button className='btn' onClick={goToContact}>contact us</button>
             </div>
             
 

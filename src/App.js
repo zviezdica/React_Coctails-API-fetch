@@ -7,7 +7,8 @@ import arrow from '../src/slike/arrow.png'
 const apiRoot = "https://www.thecocktaildb.com/api/json/v1/1/";
 const searchPath = "search.php?s=";
 const detailsPath = "lookup.php?i=";
-const randomCoctailPath = "random.php"
+const randomCoctailPath = "random.php";
+const listIngredientsPath = "list.php?i=list";
 
 function App() {
   
@@ -33,8 +34,10 @@ function App() {
       const response = await fetch(url);
       const coctailsObj = await response.json();
       const coctails = coctailsObj.drinks;
+      console.log(coctailsObj)
       setCoctailsActive(true);
       setCoctails(coctails);
+      
     }
     fetchCoctails()
     }
@@ -83,10 +86,27 @@ function App() {
     console.log(newNavItemsActivity)
     console.log(navItemsActivity[1].isactive)
     setNavItemsActivity(newNavItemsActivity);
-    
     }
-    
-  
+
+    const handleShop = () =>{
+      const newNavItemsActivity = [...navItemsActivity];
+      newNavItemsActivity.map((newNavItemActivity)=>{
+      newNavItemActivity.isactive=false; 
+      if (newNavItemActivity.id == 1){
+        newNavItemActivity.isactive=true;
+      }})
+      setNavItemsActivity(newNavItemsActivity);
+    }
+
+    const handleContact = () =>{
+      const newNavItemsActivity = [...navItemsActivity];
+      newNavItemsActivity.map((newNavItemActivity)=>{
+      newNavItemActivity.isactive=false; 
+      if (newNavItemActivity.id == 3){
+        newNavItemActivity.isactive=true;
+      }})
+      setNavItemsActivity(newNavItemsActivity);
+    }
 
   return (
     <div className="App">
@@ -96,8 +116,8 @@ function App() {
       {coctails && navItemsActivity[2].isactive && <Coctails coctails={coctails} getDetails={getDetails} coctailsActive={coctailsActive}/>}
        {coctail && navItemsActivity[2].isactive &&<Coctail coctail={coctail} coctailActive={coctailActive}/>}
        {/* {(coctailsActive===false && coctailActive===false && navItemsActivity[2].isactive) && <CoctailIdeas arrow={arrow}/>} */}
-       { navItemsActivity[0].isactive && <Home />}
-       {navItemsActivity[1].isactive && <Store />}
+       { navItemsActivity[0].isactive && <Home goToShop={handleShop} goToContact={handleContact}/>}
+       {navItemsActivity[1].isactive && <Store apiRoot={apiRoot} listIngredientsPath={listIngredientsPath}/>}
        {/* {navItemsActivity[2].isactive && <Ideas />} */}
        {navItemsActivity[3].isactive && <Contact />}
     </div>

@@ -7,3 +7,4 @@ export {default as Home} from './Home';
 export {default as Store} from './Store';
 export {default as Ideas} from './Ideas';
 export {default as Contact} from './Contact';
+// export {default as StoreItem} from './StoreItem';
