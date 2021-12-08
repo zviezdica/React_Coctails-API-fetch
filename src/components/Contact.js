@@ -8,7 +8,7 @@ import '../fontawesome';
 const Contact = () =>{
     return(
     <section className='contact-section'>
-        <h1 className='contact-title'>Don't hesitate to contact us: </h1>
+        <h1 className='contact-title'>Contact us: </h1>
         <form className='form'>
             <label htmlFor='firstName'>First Name: *</label><br/>
             <input type='text' name='firstName' id='firstName' required/><br/>
