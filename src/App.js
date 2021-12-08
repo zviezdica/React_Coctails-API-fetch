@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavBar, Home, Store, Ideas, Contact, Search, Coctails, Coctail, CoctailIdeas } from './components';
 import './App.css';
+import './fontawesome';
 import arrow from '../src/slike/arrow.png'
 
 
@@ -120,6 +121,7 @@ function App() {
        {navItemsActivity[1].isactive && <Store apiRoot={apiRoot} listIngredientsPath={listIngredientsPath}/>}
        {/* {navItemsActivity[2].isactive && <Ideas />} */}
        {navItemsActivity[3].isactive && <Contact />}
+     
     </div>
   );
 }

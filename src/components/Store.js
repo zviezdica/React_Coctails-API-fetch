@@ -12,7 +12,8 @@ const Store = ({apiRoot, listIngredientsPath}) =>{
         const list = await response.json();
         const ingredients = list.drinks;
         const newIngredients = [];
-        ingredients.map((ingredient)=>{
+        ingredients.forEach(ingredient => {
+            
             newIngredients.push(ingredient.strIngredient1);
         })
         setProducts(newIngredients);
