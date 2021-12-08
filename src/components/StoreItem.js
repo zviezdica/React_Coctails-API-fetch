@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react/cjs/react.development";
+   
+const StoreItem = ({product, index, imgSrc, addToBag}) =>{
+    const [price, setPrice] = useState(0)
+ 
+useEffect(()=>{
+    setPrice( 60 + Math.floor(Math.random()*40));
+},[])
 
-const StoreItem = ({product, index, imgSrc}) =>{
-    console.log(product);
-    console.log(imgSrc);
     return(
         <div key={index} className='store-item'>
             <img src={imgSrc} alt='product' className='product-img'></img>
             <h1 className='product-name'>{product}</h1>
-            <h2 className='price'>Price: {60 + Math.floor(Math.random()*40)} kn</h2>
-            <button className='btn shop-product-btn'>Add to bag</button>
+            <h2 className='price'>Price: {price} kn</h2>
+            <button id={index} onClick={()=>addToBag(product, imgSrc, price)} className='btn shop-product-btn'>Add to bag</button>
         </div>
     )
 }
